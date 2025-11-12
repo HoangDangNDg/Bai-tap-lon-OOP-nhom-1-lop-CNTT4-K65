@@ -16,14 +16,6 @@
 #include "Staff.cpp"
 #include "datveo.cpp" // Định nghĩa lớp BookingAlgorithm
 
-// LƯU Ý QUAN TRỌNG KHI BIÊN DỊCH:
-// Bạn KHÔNG ĐƯỢC #include các file .cpp vào đây.
-// Bạn PHẢI biên dịch tất cả các file .cpp cùng một lúc.
-//
-// Lệnh biên dịch mẫu (ví dụ: g++):
-// g++ main.cpp Entity.cpp Person.cpp Movie.cpp Seat.cpp Showtime.cpp Ticket.cpp Booing.cpp customer.cpp Staff.cpp datveo.cpp -o chuongtrinh.exe
-//
-
 using namespace std;
 
 // =============================================

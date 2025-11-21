@@ -1,7 +1,6 @@
 // File: BookingAlgorithm.h
 #ifndef BOOKINGALGORITHM_H
 #define BOOKINGALGORITHM_H
-
 #include "Showtime.h"
 #include "Booking.h"
 #include "Ticket.h"

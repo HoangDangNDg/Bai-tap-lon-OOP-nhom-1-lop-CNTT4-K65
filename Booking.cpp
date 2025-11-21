@@ -1,21 +1,17 @@
-#include <bits/stdc++.h>
-#include "Booking.h"
+#include<bits/stdc++.h>
+#include"Booking.h"
 using namespace std;
 
-// them ve
-void Booking::addTicket(const Ticket &t)
-{
-    tickets.push_back(t);
+// Them mot doi tuong ve moi vao danh sach quan ly
+void Booking::addTicket(const Ticket& t) { 
+    tickets.push_back(t); 
 }
 
-// huy ve
-void Booking::removeTicket(string id)
-{
-    for (auto it = tickets.begin(); it != tickets.end(); ++it)
-    {
-        if (it->getId() == id)
-        {
-            tickets.erase(it);
+// Xoa hoan toan mot ve khoi danh sach dua tren ID (Xoa han khoi bo nho)
+void Booking::removeTicket(string id) {
+    for (auto it = tickets.begin(); it != tickets.end(); ++it) {
+        if (it->getId() == id) {
+            tickets.erase(it); // Lenh xoa phan tu khoi vector
             cout << "Da xoa ve " << id << " khoi danh sach." << endl;
             return;
         }
@@ -23,33 +19,30 @@ void Booking::removeTicket(string id)
     cout << "Khong tim thay ve co ma " << id << " de xoa." << endl;
 }
 
-vector<Ticket> &Booking::getTickets()
-{
-    return tickets;
+// Lay toan bo danh sach ve hien co (tra ve tham chieu de co the chinh sua truc tiep)
+vector<Ticket>& Booking::getTickets() { 
+    return tickets; 
 }
 
-Ticket *Booking::findTicket(const string &id)
-{
-    for (auto &it : tickets)
-    {
-        if (it.getId() == id)
-        {
-            return &it;
+// Tim kiem ve theo ID va tra ve con tro (de co the sua doi thong tin ve do)
+Ticket* Booking::findTicket(const string& id) {
+    for(auto &it : tickets) {
+        if(it.getId() == id) {
+            return &it; // Tra ve dia chi cua ve tim thay
         }
     }
-    return nullptr;
+    return nullptr; // Tra ve null neu khong tim thay
 }
 
-void Booking::cancelTicket(const string &id, bool removeAfterCancel)
-{
-    for (auto &t : tickets)
-    {
-        if (t.getId() == id)
-        {
-            t.cancel(); // goi phuong thuc trong Ticket
-            if (removeAfterCancel)
-            {
-                removeTicket(id); // neu chon xoa sau khi huy
+// Thuc hien huy ve: Chuyen trang thai sang "Da huy" va tuy chon co xoa khoi danh sach luon hay khong
+void Booking::cancelTicket(const string& id, bool removeAfterCancel) {
+    for (auto &t : tickets) {
+        if (t.getId() == id) {
+            t.cancel(); // Goi ham cancel() cua class Ticket de doi trang thai ve
+            
+            // Neu bien removeAfterCancel la true thi xoa luon ve khoi vector
+            if (removeAfterCancel) {
+                removeTicket(id); 
             }
             return;
         }

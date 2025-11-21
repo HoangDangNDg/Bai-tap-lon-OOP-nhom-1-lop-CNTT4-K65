@@ -1,17 +1,17 @@
-# Project: Project1
+# Project: CinemaSystem
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = Booing.o customer.o Entity.o mau.o Movie.o Person.o Seat.o Showtime.o Staff.o ticket.o
-LINKOBJ  = Booing.o customer.o Entity.o mau.o Movie.o Person.o Seat.o Showtime.o Staff.o ticket.o
-LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
-CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Project1.exe
-CXXFLAGS = $(CXXINCS) -std=c++11 -std=c++11
-CFLAGS   = $(INCS) -std=c++11 -std=c++11
+OBJ      = main.o Booking.o customer.o DataLoader.o datveo.o Entity.o Movie.o Person.o Seat.o Staff.o ticket.o Showtime.o
+LINKOBJ  = main.o Booking.o customer.o DataLoader.o datveo.o Entity.o Movie.o Person.o Seat.o Staff.o ticket.o Showtime.o
+LIBS     = -L"F:/DevCpp5.11/Dev-Cpp/MinGW64/lib" -L"F:/DevCpp5.11/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"F:/DevCpp5.11/Dev-Cpp/MinGW64/include" -I"F:/DevCpp5.11/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/DevCpp5.11/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"F:/DevCpp5.11/Dev-Cpp/MinGW64/include" -I"F:/DevCpp5.11/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/DevCpp5.11/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/DevCpp5.11/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = CinemaSystem.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11
+CFLAGS   = $(INCS) -std=gnu++11
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -24,17 +24,23 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-Booing.o: Booing.cpp
-	$(CPP) -c Booing.cpp -o Booing.o $(CXXFLAGS)
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Booking.o: Booking.cpp
+	$(CPP) -c Booking.cpp -o Booking.o $(CXXFLAGS)
 
 customer.o: customer.cpp
 	$(CPP) -c customer.cpp -o customer.o $(CXXFLAGS)
 
+DataLoader.o: DataLoader.cpp
+	$(CPP) -c DataLoader.cpp -o DataLoader.o $(CXXFLAGS)
+
+datveo.o: datveo.cpp
+	$(CPP) -c datveo.cpp -o datveo.o $(CXXFLAGS)
+
 Entity.o: Entity.cpp
 	$(CPP) -c Entity.cpp -o Entity.o $(CXXFLAGS)
-
-mau.o: mau.cpp
-	$(CPP) -c mau.cpp -o mau.o $(CXXFLAGS)
 
 Movie.o: Movie.cpp
 	$(CPP) -c Movie.cpp -o Movie.o $(CXXFLAGS)
@@ -45,11 +51,11 @@ Person.o: Person.cpp
 Seat.o: Seat.cpp
 	$(CPP) -c Seat.cpp -o Seat.o $(CXXFLAGS)
 
-Showtime.o: Showtime.cpp
-	$(CPP) -c Showtime.cpp -o Showtime.o $(CXXFLAGS)
-
 Staff.o: Staff.cpp
 	$(CPP) -c Staff.cpp -o Staff.o $(CXXFLAGS)
 
 ticket.o: ticket.cpp
 	$(CPP) -c ticket.cpp -o ticket.o $(CXXFLAGS)
+
+Showtime.o: Showtime.cpp
+	$(CPP) -c Showtime.cpp -o Showtime.o $(CXXFLAGS)

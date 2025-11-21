@@ -28,13 +28,13 @@ void Staff::manageShowtime(Showtime &showtime, const string &newTime, double new
 
     cout << "Cap nhat thanh cong." << endl;
 }
-//  Them xuat chieu
+//  Them xuat chieu theo 
 void Staff::addShowtime(const Showtime &show)
 {
     showtimes.push_back(show);
     cout << "them xuat chieu "
          << show.getMovie().getTitle()
-         << " - " << show.getDateTime() << endl;
+         << " - " << show.getDateTime()<< endl;
 }
 //  Xoa xuat chieu theo thoi gian
 void Staff::removeShowtime(const string &time)
@@ -51,4 +51,8 @@ void Staff::removeShowtime(const string &time)
         }
     }
     cout << " Khong tim thay xuat chieu : " << time << endl;
+}
+
+string Staff::getRole() const {
+    return department; 
 }

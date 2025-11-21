@@ -3,6 +3,7 @@ using namespace std;
 Entity::Entity(const string &id) : id(id) {}
 
 Entity::Entity(const Entity &other) : id(other.id) {}
+Entity::~Entity() {}
 
 Entity& Entity::operator=(const Entity &other) {
     if (this != &other) {
@@ -11,7 +12,6 @@ Entity& Entity::operator=(const Entity &other) {
     return *this;
 }
 
-Entity::~Entity() {}
 
 string Entity::getId() const {
     return id;
